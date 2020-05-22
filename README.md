@@ -9,7 +9,7 @@ I said no. Right then and there the interview was pretty much over. It's as if s
 
 After the interview I hopped on the internet and found that Python was just another scripting language.  **SERIOUSLY?**  Like I couldn't learn another scripting language in about a week?  I took a look at it and was **not** impressed.  Since when does **white space** matter?  Is this the FORTRAN of scripting languages?  I'll stick with my `.bat` files and C++ thank you very much.
 
-Cut to 18 years later (5/18/2020) and I'm trying to see what all the damn hype is about Python.  I **LOVE** Monty Python 🥥🥥, so I figured I'd give it another go.  And this is my story as it unfolds...
+Cut to 18 years later (5/18/2020) and I'm trying to see what all the damn hype is about Python.  I **LOVE** Monty Python 🥥🥥🦜, so I figured I'd give it another go.  And this is my story as it unfolds...
 
 ## :dvd: Install the Latest Version of Python
 
@@ -73,3 +73,4 @@ I'm **STILL** struggling to see **why** people are so gaga over Python.  Maybe I
 * [Linting Python in Visual Studio Code](https://code.visualstudio.com/docs/python/linting)
 * [django - web development](https://docs.djangoproject.com/)
 * [Markdown Emojis](https://www.webfx.com/tools/emoji-cheat-sheet)
+* [Copy+Paste Emojis Into Markdown File](https://emojis.wiki/)
