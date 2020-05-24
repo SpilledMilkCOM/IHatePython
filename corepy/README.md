@@ -128,13 +128,14 @@ From closest to broadest (LEGB)
 * Slicing `thing[3:7]`  - Builds a sub-list from index 3 to 6.
   * Can be combined with negative indexing.
   * Half open range convention `thing[3:]` or `thing[:3]`
+* `list.copy()` - Used to copy lists as well as using the "full slice" notation `theCopy = thing[:]`
 * `list.index()` - Find the location of an object in a list.
 * `list.count()` - Used with an argument will count the number of occurences of that value.
 * `del` - Removes the item from the list
   * `del theList[3]` removes that element in the list.
 * `list.remove()` - Removes an item from the list by value.
   * `theList.remove(')
-* `list.insert()` - Inserts the item 
+* `list.insert()` - Inserts the item
 * `list.extend()`
 * `list.reverse()`
 * `list.sort()` - Send in a function key *(sorts in place)*
@@ -153,7 +154,37 @@ From closest to broadest (LEGB)
 
 ### Sets
 
+* Similar to dictionaries
+* An efficient way to remove duplicates of a list
+* `set.add()` - Add new elements.  No error if element already exists.
+* Set Operations
+  * `set.union()` is commutative
+  * `set.intersection()` is commutative
+  * `set.difference()` is **not** commutative
+  * `set.symmetric_difference()` is commutative. First set **or** second set, but **not** both.
+  * `set.issubset()`
+  * `set.issuperset()`
+  * `set.isdisjoint()`
+
 ### Protocols
+
+* Container - `in` and `not in` supported
+* Sized - `len()` will determine number of elements
+* Iterable - Yielding elements one by ones
+* Sequence - Indexed using `[]`, `.index()`, `.count()`, `reversed()`, iterable, sized, and container.
+* Mutable Sequence
+* Mutable Set
+* Mutable Mapping
+
+## Exceptions
+
+Python takes the "liberal" approach to exceptions versus an exception truly being an "exceptional" case.  Under the covers exceptions typically require many cycles so it seems like things would run slower if throwing an exception is the "normal" course of action.
+
+## Iteration and Iterables
+
+## Classes
+
+## File IO and Resource Managements
 
 ## :books: References
 
