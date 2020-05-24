@@ -22,7 +22,7 @@ def main():
         if command == "q":
             quit = True
 
-        processCommand(command)
+        processCommand(command)     # Defined in Decisions
 
         gameState.turnCount += 1    # NO ++
 
@@ -31,6 +31,6 @@ def main():
 def welcome():
     print("\nWelcome to Dynasty!\n")
 
-welcome.__doc__ = "A friendly welcome to the game. (probably not the most preferred way to do this)"
+welcome.__doc__ = "A friendly welcome to the game. (probably not the most preferred way to document this)"
 
 main()
