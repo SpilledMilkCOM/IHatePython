@@ -1,5 +1,8 @@
 # :rage: I Hate Python
 
+* :folder: **Models** - Some python classes
+* :folder: **corepy** - The Pluralsight course notes and code
+
 ## :scroll: Backstory
 
 I remember way back in the day (2002) I was laid off, got 6 months of severance, and started to look for my "dream job".
