@@ -74,7 +74,7 @@ I'm **STILL** struggling to see **why** people are so gaga over Python.  Maybe I
 
 ## Zen of Python
 
-These tenets can be accessed in **REPL** by entering `import this`
+These tenets can be accessed in the **REPL** by entering `import this`
 
      >>> import this
 
@@ -99,6 +99,16 @@ The Zen of Python, by Tim Peters
 * If the implementation is hard to explain, it's a bad idea.
 * If the implementation is easy to explain, it may be a good idea.
 * Namespaces are one honking great idea -- let's do more of those!
+
+## :tv: Courses I Watched
+
+1) [Learn Python - Full Course for Beginners](https://www.youtube.com/watch?v=rfscVS0vtbw&t=15s)
+    * This was the first one I found.  I **should** have stopped watching, but I couldn't!  The guy was so "chill" so I listened and did my own thing in some of these sammple files.
+2) [Python: The Big Picture](https://app.pluralsight.com/library/courses/python-big-picture/table-of-contents)
+    * What a refreshing change from the "chill" video above.  You will need a subscription to Pluralsight though.
+3) [Core Python: Getting Started](https://app.pluralsight.com/library/courses/getting-started-python-core/table-of-contents)
+    * An **amazing** and thorough course of the core material.
+    * I pronounce it "Pie-THON" and this guy says "Pie-thun" (and "I-cun" vs "I-CON"); I chuckled the entire class.
 
 ## :books: References
 
