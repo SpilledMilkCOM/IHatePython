@@ -33,7 +33,7 @@ All of this was pretty straightforward, so there aren't many notes here.
 ## Modularity
 
 * Whitespace - 4 spaces for block indentation *(by convention)*
-* "dunder" - Double Underscore "dunder name" = _ _ name _ _
+* "dunder" - Double Underscore "dunder name" = \_\_name__
 * Docstrings
   * Google format is preferred
 * Shebang (#! - Shhh...Bang!) - Special comment at the beginning of the file.
@@ -94,7 +94,7 @@ From closest to broadest (LEGB)
 * Single element tuples have a trailing comma `(123, )`. If the comma was not present then it would be interpreted as just an integer due to the parenthesis precedence.
 * `()` is the empty tuple.
 * The parenthesis may be omitted in many cases.  `1, 2, 3` is also a tuple.
-* Unpacking tuples can assign multiple references to tuple values.
+* **Unpacking** tuples can assign multiple references to tuple values.
 * `in` or `not in` operators
 
 ### Strings
@@ -112,7 +112,7 @@ From closest to broadest (LEGB)
   * results in the tuple ('un', 'forget', 'able')
   * The single underscore `_` is used by convention to throw away values.
 * `str.format()` - Most likely will have to look this stuff up anyway.
-* f-strings - String interpolation.
+* **f-strings** - String interpolation.
   * `f'The value is {value}.` where value is evaluated
   * `:` may be used within the curly braces after the value to define precision.
 
@@ -126,8 +126,8 @@ From closest to broadest (LEGB)
 
 ### Lists
 
-* Negative indexing `[-1]` - Access elements from the end of the list.
-* Slicing `thing[3:7]`  - Builds a sub-list from index 3 to 6.
+* **Negative indexing** `[-1]` - Access elements from the end of the list.
+* **Slicing** `thing[3:7]`  - Builds a sub-list from index 3 to 6.
   * Can be combined with negative indexing.
   * Half open range convention `thing[3:]` or `thing[:3]`
 * `list.copy()` - Used to copy lists as well as using the "full slice" notation `theCopy = thing[:]`
@@ -170,13 +170,13 @@ From closest to broadest (LEGB)
 
 ### Protocols
 
-* Container - `in` and `not in` supported
-* Sized - `len()` will determine number of elements
-* Iterable - Yielding elements one by ones
-* Sequence - Indexed using `[]`, `.index()`, `.count()`, `reversed()`, iterable, sized, and container.
-* Mutable Sequence
-* Mutable Set
-* Mutable Mapping
+* **Container** - `in` and `not in` supported
+* **Sized** - `len()` will determine number of elements
+* **Iterable** - Yielding elements one by ones
+* **Sequence** - Indexed using `[]`, `.index()`, `.count()`, `reversed()`, iterable, sized, and container.
+* **Mutable Sequence**
+* **Mutable Set**
+* **Mutable Mapping**
 
 ## Exceptions
 
@@ -203,7 +203,7 @@ Python takes the "liberal" approach to exceptions versus an exception truly bein
 ### It's Easier to Ask Forgiveness Than Permission
 
 * Prepaire for Failure and check all of the inputs *(Look Before You Leap - LBYL)*
-* Easier to Ask Forgiveness Than Permission *(EAFP)*
+* **Easier to Ask Forgiveness Than Permission** *(EAFP)*
   * The code's "happy path" is emphasized rather than being interspersed with error handling.
 
 ### Platform Specific Code
@@ -223,8 +223,97 @@ Can Try/Except around entire module definition and the functions will be defined
 * **Filtering Comprehensions** - Optional filtering clause
   * `[x for x in range(101) if is_prime(x)]` only adds x to the list if it's prime.
 
+### Iteration Protocols
+
+* **iterable** Can be passed to `iter()` to produce an *iterator*
+* **iterator** Can be passed to `next()` to get the enxt value in the sequence
+* **Stopping Iteration with an Exception**  WHAT?
+  * **A Single End** - Sequences only have one ending, after all, so reaching it is exceptional
+  * **Infinite Sequences** - Finding the end of an infinite sequence would be truly exceptional
+
+### Generator Functions
+
+* Iterables defined by functions
+* Lazy evaluation
+* Can model sequences with no definite end
+* Composable into pipelines
+* `yield` - Generators functions must include at least one `yield` statement.
+  * They may also include `return` statements.
+  * Each call to `next()` on a generator executes the code up to the next `yield` statment
+* Uses **PyCharm** debugger to illustrate.
+
+### Maintaining State in Generators
+
+### Laziness and the Infinite
+
+* Generators only do enough work to produce requested data.
+* This allows generator s to model inifite (or very large) sequences.
+* Examples:
+  * Sensor readings
+  * Mathematical sequences
+  * Contents of large files
+
+### Generator Expressions
+
+* The laziness reduces memory in many cases, depending on how the result is accessed.
+
+### Iteration Tools
+
+* Python has many built-in functions for working with iterators `enumerate()` and `sum()`
+* The `itertools` module provides many more.
+* `itertools.islice()` - Perform lazy slicing of any iterator.
+* `itertools.count()` - An unbounded arithmetic sequence of integers.
+* **Boolean Aggregation**
+  * `any()` - Determins if **any** elements in a series are true
+  * `all()` - Determins if **all** elements in a series are true
+* `zip()` - Synchronize iterations across two or more iterables
+* `chain()` - 
 
 ## Classes
+
+### Defining Classes
+
+### Instance Methods
+
+* Must have the `self` parameter on all methods.
+
+### Instance Initializers
+
+* `__init__(self)` - Is an initializer and **not** a constructor.  Used to configure and object that already exists by the time \_\_init__ is called
+* `_` **"private"** variables are marked with a leading underscore.
+
+### Collaborating Classes
+
+* **The Law of Demeter**
+  * The principle of **least knowledge**
+  * Never call methods on objects you receive from other calls
+    * *Only talk to your friends*
+
+### Object-Oriented Design with Functions
+
+* Don't create a class if you don't have to.
+* Separation of concerns for printing a boarding pass.
+* **Tell! Don't ask.**
+  * Tell other objects what to do instead of asking them their state and responding to it.
+
+### Polymorphism and Duck Typing
+
+* **Polymorphism** - Using objects of different types througha uniform interface.
+  * It applies to both functions as well as more complex types.
+* **Duck Typing**
+
+      "When I see a bird that walks like a duck and swims like a duck and quacks like a ducks, I call that bird a duck."
+    **James Whitecomb Riley**
+
+  * An objects's fitness for use is only determined at use.
+  * This is in contrast to statically typed compiled languages.
+  * Suitability is not determined by inheritance or interfaces.
+
+### Inheritance and Implementation
+
+* Python uses **Late Binding** - The object attributes aren't bound until they are called during runtime.
+* You can try any method on any object.
+* Useful for sharing implementation between classes.
 
 ## File IO and Resource Managements
 

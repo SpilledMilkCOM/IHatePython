@@ -63,7 +63,7 @@ I'm **STILL** struggling to see **why** people are so gaga over Python.  Maybe I
 ### Things I Need to Try
 
 * Inheritance / Interfaces / Polymorphism
-* Public / Private?
+* Public / Private? **NO!** Everything is public. "private" variables are marked with a leading underscore.
 * IoC Container
 * Threading
 * Reflection (call a method based on its string name / metadata on a class)
