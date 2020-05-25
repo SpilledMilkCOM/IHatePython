@@ -49,7 +49,7 @@ class Flight:
         self._seating[row][letter] = passenger
 
     def make_boarding_cards(self, card_printer):
-        for passenger, seat in sorted(self._parse_seats()):
+        for passenger, seat in sorted(self._passenger_seats()):
             card_printer(passenger, seat, self.number(), self.aircraft_model())
 
     def num_available(self):
