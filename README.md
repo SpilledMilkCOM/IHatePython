@@ -32,6 +32,10 @@ I installed the linter, but it will also nag at you saying that your version of 
 
 Once you've created your "Hello World" file, then you'll want to set up the debugger tell it what version of Python you want to use and the location of the `python.exe` file which is stored in the `settings.json` file.  You will also need a `launch.json` file which describes how the debugger will launch.  VS Code has a template for this where you can use the current active file or attach to a process.
 
+    ~\AppData\Local\Programs\Python\Python38-32\Scripts\pip.exe install autopep8
+
+Installing autopep8 will allow VS Code to format your code using the [SHIFT ALT F] command.
+
 ## :thought_balloon: Thoughts (COULD be more of a rant)
 
 When I first looked at Python quite a few years ago I immediately hated it *"What do you mean **whitespace** matters? Are we back in the FORTRAN days?"*

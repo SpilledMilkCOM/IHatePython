@@ -180,6 +180,34 @@ From closest to broadest (LEGB)
 
 Python takes the "liberal" approach to exceptions versus an exception truly being an "exceptional" case.  Under the covers exceptions typically require many cycles so it seems like things would run slower if throwing an exception is the "normal" course of action.
 
+* `try:`
+* `except:`
+* `finally:`
+* `pass` a noop in Python so there can be an effective empty block.
+* **Exceptions Can Not Be Ignored** vs return codes that might be.
+  * "More Pythonic" is to raise exceptions even for the little things.
+* `raise` will re-raise the exception.
+
+### Exceptions Are Part of the API
+
+### Exceptions and Protocols
+
+* `ValueError()`
+* `IndexError()` integer index is out of bounds
+* `KeyErrors()` lookup when a mapping fails
+
+### Avoid Explicit Type Checks
+
+### It's Easier to Ask Forgiveness Than Permission
+
+* Prepaire for Failure and check all of the inputs *(Look Before You Leap - LBYL)*
+* Easier to Ask Forgiveness Than Permission *(EAFP)*
+  * The code's "happy path" is emphasized rather than being interspersed with error handling.
+
+### Platform Specific Code
+
+Can Try/Except around entire module definition and the functions will be defined at the module level.
+
 ## Iteration and Iterables
 
 ## Classes
