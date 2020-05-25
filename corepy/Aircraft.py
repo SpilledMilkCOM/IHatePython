@@ -1,3 +1,5 @@
+from abc import abstractmethod
+
 class Aircraft:
 
     def __init__(self, registration):
@@ -10,6 +12,11 @@ class Aircraft:
 
     def registration(self):
         return self._registration
+
+    @abstractmethod
+    def seating_plan(self):
+        # if this is not defined, the linter will complain
+        pass
 
 
 class AircraftPreviousDefinition:

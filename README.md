@@ -14,7 +14,7 @@ After the interview I hopped on the internet and found that Python was just anot
 
 Cut to 18 years later (5/18/2020) and I'm trying to see what all the damn hype is about Python.  I **LOVE** Monty Python 🥥🥥🦜, so I figured I'd give it another go.  And this is my story as it unfolds...
 
-## :dvd: Install the Latest Version of Python
+## 💾 Install the Latest Version of Python
 
 * [Download Python](https://www.python.org/downloads/)
 * Version 3.8.3 (as of 5/19/2020)
