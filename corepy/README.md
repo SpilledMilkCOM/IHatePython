@@ -317,6 +317,37 @@ Can Try/Except around entire module definition and the functions will be defined
 
 ## File IO and Resource Managements
 
+### Opening Files
+
+* `open(file, mode, encoding)` - open a file for reading or writing
+  * file: the path to the file (required)
+  * mode: read, write, or append (r, w, a), plus binary or text (b, t)
+  * encoding: encoding to use in text mode
+    * What is the `sys.getdefaultencoding()`? Probably 'utf-8'
+
+### Writing Text
+
+### Reading Text
+
+* `file.open('filename.txt', mode='rt', encoding='utf-8')`
+* `file.read(32)` - read 32 characters since this was opened in text mode.
+* `file.readline()` reads to a newline character (`'\n'`) or to the end of the file.
+* `file.readlines()` reads all of the lines and returns a list.
+
+### File Iteration
+
+### Closing Fiels with Finally
+
+### With-blocks
+
+* `with () as` can be used with any objects that support the context-manager protocol.
+
+### Binary Files
+
+### File-like Objects
+
+* Certain methods may not be defined.
+
 ## :books: References
 
 * [PEP 8 Style Guide](https://www.python.org/dev/peps/pep-0008/)
