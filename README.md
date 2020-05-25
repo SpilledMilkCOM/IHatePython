@@ -1,7 +1,7 @@
 # :rage: I Hate Python
 
-* :folder: **Models** - Some python classes
-* :folder: **corepy** - The Pluralsight course notes and code
+* :file_folder: **Models** - Some python classes
+* :file_folder: **corepy** - The Pluralsight course notes and code
 
 ## :scroll: Backstory
 
