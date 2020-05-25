@@ -1,7 +1,8 @@
 # :rage: I Hate Python
 
 * :file_folder: **Models** - Some python classes
-* :file_folder: **corepy** - The Pluralsight course notes and code
+* :file_folder: **corepy** - A Pluralsight course notes and code
+* :file_folder: **demo_reader** - A Pluralsight course notes and code
 
 ## :scroll: Backstory
 
@@ -112,6 +113,8 @@ The Zen of Python, by Tim Peters
 3) [Core Python: Getting Started](https://app.pluralsight.com/library/courses/getting-started-python-core/table-of-contents)
     * An **amazing** and thorough course of the core material.
     * I pronounce it "Pie-THON" and this guy says "Pie-thun" (and "I-cun" vs "I-CON"); I chuckled the entire class.
+4) [Core Python: Organizing Larger Programs](https://app.pluralsight.com/library/courses/core-python-organizing-larger-programs/table-of-contents)
+    * Same guy as above course.
 
 ## :books: References
 
