@@ -20,6 +20,8 @@ I watched another video for this and didn't really have any notes for this secti
 
 ## Introducing Strings, Collections, and Iteration
 
+All of this was pretty straightforward, so there aren't many notes here.
+
 * String
 * String Literals
 * Bytes
@@ -209,6 +211,18 @@ Python takes the "liberal" approach to exceptions versus an exception truly bein
 Can Try/Except around entire module definition and the functions will be defined at the module level.
 
 ## Iteration and Iterables
+
+### List and Set Comprehensions
+
+* **List Comprehension** - A fragment of code enclosed in square brackets
+  * `[len(word) for word in words]` where words is a list
+* **Set Comprehension** - A fragment of code enclosed in curly brackets
+  * `{len(word) for word in words}` where words is a list (the set will not contain any duplicates)
+* **Dictionary Comprehension** - A fragment of code enclosed in curly brackets
+  * `{key: len(value) for key, value in theDictionary.items()}` creates a new dict
+* **Filtering Comprehensions** - Optional filtering clause
+  * `[x for x in range(101) if is_prime(x)]` only adds x to the list if it's prime.
+
 
 ## Classes
 
