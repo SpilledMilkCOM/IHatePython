@@ -72,7 +72,7 @@ I'm **STILL** struggling to see **why** people are so gaga over Python.  Maybe I
 * [Blender](https://www.blender.org/) (Application Scripting)
 * Try this on my Mac
 
-## Zen of Python
+## ☯ Zen of Python
 
 These tenets can be accessed in the **REPL** by entering `import this`
 
