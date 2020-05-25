@@ -3,7 +3,7 @@ from Aircraft import Aircraft
 
 class Boeing777(Aircraft):
 
-     def model(self):
+    def model(self):
         return "Boeing 777"
 
     def seating_plan(self):

@@ -71,7 +71,7 @@ class Flight:
         if self._seating[from_row][from_letter] is None:
             raise ValueError(f"No passenger to relocate in seat {from_seat}")
 
-       to_row, to_letter = self._parse_seat(to_seat)
+        to_row, to_letter = self._parse_seat(to_seat)
 
         if self._seating[to_row][to_letter] is None:
             raise ValueError(f"Seat {to_seat} already occupied")
@@ -106,13 +106,13 @@ class Flight:
         for row in row_numbers:
             for letter in seat_letters:
                 passenger = self._seating[row][letter]
-                if passenger is not None
+                if passenger is not None:
                     yield (passenger, f"{row}{letter}")
 
 
 #----==== MODULE FUNCTIONS ====----------------------------------------------------------
 
-def console_card_printer(passenger, seat, flight_number, aircraft)
+def console_card_printer(passenger, seat, flight_number, aircraft):
     output = f"| Name: {passenger}"         \
              f"  Flight: {flight_number}"   \
              f"  Seat: {seat}"              \
