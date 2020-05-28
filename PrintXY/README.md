@@ -2,7 +2,7 @@
 
 ## From Tim Sweeney's [Twitter post](https://twitter.com/TimSweeneyEpic/status/1265451572353552384):
 
-    Here's a neat test of programming language expressiveness: Can you write a function PrintXY taking an integer n>=0 that prints all strings of length n containing only the characters 'X' and 'Y'? Can you do it without recursion, and without assuming n<=64? Is it readable?
+### *Here's a neat test of programming language expressiveness: Can you write a function PrintXY taking an integer n>=0 that prints all strings of length n containing only the characters 'X' and 'Y'? Can you do it without recursion, and without assuming n<=64? Is it readable?*
 
 Technically the `printXY(n)` function in the file `print.py` should do it with a single loop. Leveraging the base 2 nature of the problem and Python's ability to handle arbitrarily large integeters.
 
