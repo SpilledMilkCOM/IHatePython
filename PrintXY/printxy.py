@@ -1,7 +1,11 @@
 import sys
 
 def printXY(n: int):
-    """Prints a string comprised of all combinations of X and Y up to width N."""
+    """Prints a string comprised of all combinations of X and Y up to width N.
+    
+    Args:
+        n (int): The width of the string
+    """
 
     if n < 0:
         raise ValueError("ERROR: n must be greater than or equal to 0")
