@@ -3,6 +3,7 @@
 * :file_folder: **Models** - Some python classes
 * :file_folder: **corepy** - A Pluralsight course notes and code
 * :file_folder: **demo_reader** - A Pluralsight course notes and code
+* :file_folder: **functions** - A Pluralsight course notes and code
 
 ## :scroll: Backstory
 
