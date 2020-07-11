@@ -26,7 +26,7 @@ def main(a: int, b: int, c: int):
         b (int): Once of the starting values
         c (int): Once of the starting values
     """
-    print(f"Inputs: {a}, {b}, {c}\n")
+    print(f"\n\nInputs: {a}, {b}, {c}\n")
 
     for action in actions:
         mainActions = [ action ]
@@ -39,10 +39,12 @@ def main(a: int, b: int, c: int):
 
     games.sort(reverse=False, key=lambda game: game.rank)
 
-    for game in games[0:10]:
-        print(f"\n{game.rank}")
+    for game in games[0:3]:
+        print(f"\n===== {game.rank} =====\n")
         for action in game.actions:
-            print(action.number, action.values)
+            print(f"  {action.number}   {action.values}")
+
+    print("\n\n")
 
 def generate(currentActions: [], level: int):
     """A recursive function that will append the actions at the base level
