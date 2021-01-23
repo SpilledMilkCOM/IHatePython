@@ -27,7 +27,7 @@ Cut to 18 years later (5/18/2020) and I'm trying to see what all the damn hype i
 * Visual Studio Code prompts (recommends) `pylint`
 
 I installed Python in the default directory, which I'm guessing is `~\AppData\Local\Programs\Python` since I wasn't paying much attention.
-I have not cluttered up my `path` variable with all of the Python stuff, so I've been doing everything "brute force". *(You should also be able to use the `py` alias if everything is installed correctly.)*
+I have not cluttered up my `path` variable with all of the Python stuff, so I've been doing everything "brute force". *(You should also be able to use the `py` alias if everything is installed correctly.)*  Use the Package Installer for Python (PIP).
 
     ~\AppData\Local\Programs\Python\Python38-32\Scripts\pip.exe install pylint
 
@@ -41,7 +41,7 @@ Once you've created your "Hello World" file, then you'll want to set up the debu
 
 Installing autopep8 will allow VS Code to format your code using the [SHIFT ALT F] command.
 
-## :thought_balloon: Thoughts (COULD be more of a rant)
+## 💭 Thoughts (COULD be more of a rant)
 
 When I first looked at Python quite a few years ago I immediately hated it *"What do you mean **whitespace** matters? Are we back in the FORTRAN days?"*
 
@@ -57,7 +57,7 @@ The choice to exclude `++`?  I don't get it.  If you have the `+=` operator, the
 
 So basically a colon ":" says that there is **"more"** to come, and as long as it's indented then **that's** the block of code which is "more".
 
-### :book: Documention
+### 🕮 Documention
 
 "Type Hinting" wasn't added until 3.5, but I would definitely recommend this for more readable and structured code.
 
@@ -105,7 +105,7 @@ The Zen of Python, by Tim Peters
 * If the implementation is easy to explain, it may be a good idea.
 * Namespaces are one honking great idea -- let's do more of those!
 
-## :tv: Courses I Watched
+## 📺 Courses I Watched
 
 1) [Learn Python - Full Course for Beginners](https://www.youtube.com/watch?v=rfscVS0vtbw&t=15s)
     * This was the first one I found.  I **should** have stopped watching, but I couldn't!  The guy was so "chill" so I listened and did my own thing in some of these sammple files.
@@ -117,7 +117,7 @@ The Zen of Python, by Tim Peters
 4) [Core Python: Organizing Larger Programs](https://app.pluralsight.com/library/courses/core-python-organizing-larger-programs/table-of-contents)
     * Same guy as above course.
 
-## :books: References
+## 📚 References
 
 * [Getting Started with Python in VS Code](https://code.visualstudio.com/docs/python/python-tutorial)
 * [Documenting Python Code: A Complete Guide](https://realpython.com/documenting-python-code/)
