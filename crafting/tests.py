@@ -1,16 +1,20 @@
 import unittest
 
+from mockUtil import createWarrior
+
 class TestStringMethods(unittest.TestCase):
-
-    def test_failure(self):
-        self.assertEqual('foo'.lower(), 'FOO')
-
-    def test_upper(self):
-        self.assertEqual('foo'.upper(), 'FOO')
 
     def test_isupper(self):
         self.assertTrue('FOO'.isupper())
         self.assertFalse('Foo'.isupper())
+
+    def test_warrior(self):
+        test = createWarrior()
+
+        self.assertIsNotNone(test)
+        self.assertEqual(test.name, "He-Man")
+        self.assertEqual(test.resources[0].name, "Water")
+        self.assertEqual(test.resources[0].count, 100)
 
     def test_split(self):
         s = 'hello world'

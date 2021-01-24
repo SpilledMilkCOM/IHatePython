@@ -1,11 +1,11 @@
-# :rage: I Hate Python
+# 💢 I Hate Python 💢
 
 * :file_folder: **Models** - Some python classes
 * :file_folder: **corepy** - A Pluralsight course notes and code
 * :file_folder: **demo_reader** - A Pluralsight course notes and code
 * :file_folder: **functions** - A Pluralsight course notes and code
 
-## :scroll: Backstory
+## 📜 Backstory
 
 I remember way back in the day (2002) I was laid off, got 6 months of severance, and started to look for my "dream job".
 I networked and interviewed like crazy, submitting my resume to the likes of Pixar, ILM, and Digital Domain.

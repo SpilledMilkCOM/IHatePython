@@ -14,18 +14,18 @@ The `__init__.py` file is optional in Python 3.3+ *(required for earlier version
 
 ## Recommended Project Layout
 
-* :file_folder: **project_name**
-  * :page_facing_up: `README.rst`
-  * :file_folder: **docs**
-  * :file_folder: **src**
-    * :file_folder: **package_name**
-      * :page_facing_up: `__init__.py`
-      * :page_facing_up: `some_source.py`
-      * :file_folder: **subpackage1**
-        * :page_facing_up: `__init__.py`
-  * :file_folder: **tests**
-    * :page_facing_up: `test_code.py`
-  * :page_facing_up: `setup.py`
+* 📂 **project_name**
+  * 📄 `README.rst`
+  * 📂 **docs**
+  * 📂 **src**
+    * 📂 **package_name**
+      * 📄 `__init__.py`
+      * 📄 `some_source.py`
+      * 📂 **subpackage1**
+        * 📄 `__init__.py`
+  * 📂 **tests**
+    * 📄 `test_code.py`
+  * 📄 `setup.py`
 
 ## Package Distributions
 

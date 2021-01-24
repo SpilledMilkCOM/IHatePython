@@ -1,5 +1,7 @@
 import sys
 
+from . import mockUtil
+
 def main(a: int, b: int, c: int):
     """Given A, B, and C - print the best actions to take to reduce the distance away from the midpoint
     
@@ -9,6 +11,8 @@ def main(a: int, b: int, c: int):
         c (int): Once of the starting values
     """
     print(f"\n\nInputs: {a}, {b}, {c}\n")
+
+    warrior = mockUtil.createWarrior()
 
 if (__name__ == '__main__'):
     if (len(sys.argv) < 2):
