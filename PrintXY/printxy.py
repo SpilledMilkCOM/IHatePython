@@ -1,4 +1,5 @@
 import sys
+from typing import List
 
 def print_xy(n: int):
     """Prints a string comprised of all combinations of X and Y of length N.
@@ -16,7 +17,7 @@ def print_xy(n: int):
         print(format(i, format_spec).replace("0", "X").replace("1", "Y"))
 
 
-def print_xyx(n: int, digits: [str]):
+def print_xyx(n: int, digits: List[str]):
     """Prints a string comprised of all combinations of the supplied digits of length N.
     
     Args:
@@ -38,7 +39,7 @@ def print_xyx(n: int, digits: [str]):
         print((digits[0] * (n - len(num_string))) + num_string)
 
 
-def gen_string(i: int, base: int, digits: [str]):
+def gen_string(i: int, base: int, digits: List[str]):
     """Returns a string representation of an integer given the list of digits.
 
     Args:
