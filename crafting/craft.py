@@ -1,6 +1,8 @@
+import json
 import sys
 
-from mockUtil import createWarrior
+from item import Item
+from mockUtil import create_warrior, create_warrior_from_json2
 
 def main(a: int, b: int, c: int):
     """Given A, B, and C - print the best actions to take to reduce the distance away from the midpoint
@@ -12,7 +14,18 @@ def main(a: int, b: int, c: int):
     """
     print(f"\n\nInputs: {a}, {b}, {c}\n")
 
-    warrior = createWarrior()
+    warrior = create_warrior()
+
+    print(warrior.to_string())
+
+    print(json.dumps(warrior, default=lambda childObj: childObj.__dict__, indent=4))
+
+    # Alphabetical fields
+    # print(json.dumps(warrior, default=lambda childObj: childObj.__dict__, indent=4, sort_keys=True))
+
+    data = json.dumps(warrior, default=lambda childObj: childObj.__dict__)
+
+    warrior = create_warrior_from_json2(data)
 
     print(warrior.to_string())
 

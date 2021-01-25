@@ -58,3 +58,8 @@ Figure out the optimal levels to traverse in order to craft an item.
   * Resources
     * Metal x 5-8
     * Bone x 12-15
+
+## Reference
+
+https://www.geeksforgeeks.org/serialize-and-deserialize-complex-json-in-python/
+https://www.code-learner.com/python-json-example/

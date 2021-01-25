@@ -1,4 +1,4 @@
-class Resource:
+class Resource(object):
 
     def __init__(self, name, count):
         self.name = name
