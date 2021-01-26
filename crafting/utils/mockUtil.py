@@ -13,7 +13,7 @@ def create_warrior():
 
     return result
 
-def create_warrior_from_json(data):
+def create_warrior_from_json2(data):
 
     # loads() only creates a data object (dict - no methods)
     # In complex objects you will get a dict of dicts
@@ -31,26 +31,6 @@ def create_warrior_from_json(data):
 
     return Item(warriorData.name, resources)
 
-def dict_to_item(dict):
-
-    # This feels like a hack, because the deserialization is based on known field names.
-    # And if a Resource also had the field "resources" in it, then this would fail.
-
-    resources = dict.get('resources')
-
-    if resources is None:
-        name = dict.get("name")
-        count = dict.get("count")
-
-        if name is None and count is None:
-            return None
-        else:
-            return Resource(name, count)
-
-    else:
-        return Item(dict['name'], resources)
-
-
-def create_warrior_from_json2(data):
-
-    return json.loads(data, object_hook=dict_to_item)
+def create_warrior_from_json(data: str):
+    # Constructs an Item() to use the method/hook
+    return Item().deserialize(data)

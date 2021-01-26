@@ -1,12 +1,12 @@
 import json
 import sys
 
-from utils.mockUtil import create_warrior, create_warrior_from_json2
+from utils.mockUtil import create_warrior, create_warrior_from_json, create_warrior_from_json2
 
 def load_file(fileName: str):
     file = open(fileName, "r")
 
-    return create_warrior_from_json2(file.read())
+    return create_warrior_from_json(file.read())
 
 def main(fileName: str):
     """Given the item filename, determine the levels to run in order to gain the resources to create the item.
