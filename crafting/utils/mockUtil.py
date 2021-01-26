@@ -39,7 +39,14 @@ def dict_to_item(dict):
     resources = dict.get('resources')
 
     if resources is None:
-        return Resource(dict['name'], dict['count'])
+        name = dict.get("name")
+        count = dict.get("count")
+
+        if name is None and count is None:
+            return None
+        else:
+            return Resource(name, count)
+
     else:
         return Item(dict['name'], resources)
 

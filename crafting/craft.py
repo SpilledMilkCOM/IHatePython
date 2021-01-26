@@ -3,6 +3,11 @@ import sys
 
 from utils.mockUtil import create_warrior, create_warrior_from_json2
 
+def load_file(fileName: str):
+    file = open(fileName, "r")
+
+    return create_warrior_from_json2(file.read())
+
 def main(fileName: str):
     """Given the item filename, determine the levels to run in order to gain the resources to create the item.
     
@@ -11,6 +16,11 @@ def main(fileName: str):
     """
     print(f"\n\nInputs: {fileName}\n")
 
+    warrior = load_file(fileName)
+
+    print(warrior.to_string())
+
+def print_mock_warrior():
     warrior = create_warrior()
 
     print(warrior.to_string())
