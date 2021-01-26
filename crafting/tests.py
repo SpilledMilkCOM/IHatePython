@@ -1,6 +1,6 @@
 import unittest
 
-from mockUtil import createWarrior
+from crafting.mockUtil import create_warrior
 
 class TestStringMethods(unittest.TestCase):
 
@@ -9,7 +9,7 @@ class TestStringMethods(unittest.TestCase):
         self.assertFalse('Foo'.isupper())
 
     def test_warrior(self):
-        test = createWarrior()
+        test = create_warrior()
 
         self.assertIsNotNone(test)
         self.assertEqual(test.name, "He-Man")

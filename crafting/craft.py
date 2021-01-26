@@ -1,8 +1,7 @@
 import json
 import sys
 
-from item import Item
-from mockUtil import create_warrior, create_warrior_from_json2
+from crafting.mockUtil import create_warrior, create_warrior_from_json2
 
 def main(a: int, b: int, c: int):
     """Given A, B, and C - print the best actions to take to reduce the distance away from the midpoint
