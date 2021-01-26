@@ -1,8 +1,17 @@
 {
     "name": "Warrior",
     "resources": [
-        { "name": "Metal", "count": 10 },
-        { "name": "Bone", "count": 25 },
-        { "name": "Water", "count": 100 }
+        {
+            "name": "Metal",
+            "count": 10
+        },
+        {
+            "name": "Bone",
+            "count": 25
+        },
+        {
+            "name": "Water",
+            "count": 100
+        }
     ]
 }

@@ -4,13 +4,13 @@ from models.Resource import Resource
 
 class Item(object):
 
-    def __init__(self, name = None, resources = None):
+    def __init__(self, name: str = None, resources = None):
         self.name = name
         self.resources = resources
 
     def deserialize(self, data: str):
 
-        # !! There has GOT to be a more generic way to deserialize objects!!
+        # !! There has GOT to be a more generic way to deserialize objects !!
 
         return json.loads(data, object_hook=Item().dict_to_item)
 

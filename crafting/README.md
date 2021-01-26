@@ -3,7 +3,8 @@
 ## Problem
 
 In order to **craft** an item it takes certain amounts of resources.
-Those resources are available in levels.  Each level may contain certain resources at certain amounts.  A resource is also considered an item because you can craft different resources from other resources at a certain probability.
+Those resources are available in levels.  Each level may contain certain resources at certain amounts.  Each level has a "cost" (Energy) to run through.
+A resource is also considered an item because you can craft different resources from other resources at a certain probability.
 
 Figure out the optimal levels to traverse in order to craft an item.
 
@@ -45,16 +46,19 @@ Figure out the optimal levels to traverse in order to craft an item.
   * Resources: null (cannot be crafted)
 
 * Level: 1
+  * Energy x 10
   * Resources
     * Bone x 5-6
     * Water x 10-12
 
 * Level: 2
+  * Energy x 10
   * Resources
     * Metal x 3-5
     * Water x 20-25
 
 * Level: 3
+  * Energy x 10
   * Resources
     * Metal x 5-8
     * Bone x 12-15

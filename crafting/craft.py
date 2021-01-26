@@ -1,22 +1,32 @@
 import json
 import sys
 
-from utils.mockUtil import create_warrior, create_warrior_from_json, create_warrior_from_json2
+from utils.mockUtil import create_warrior, create_levels_from_json, create_warrior_from_json, create_warrior_from_json2
 
-def load_file(fileName: str):
-    file = open(fileName, "r")
+def load_files(itemFileName: str, levelFileName: str):
+    file = open(itemFileName, "r")
 
-    return create_warrior_from_json(file.read())
+    warrior = create_warrior_from_json(file.read())
 
-def main(fileName: str):
+    file =  open(levelFileName, "r")
+
+    levels = create_levels_from_json(file.read())
+
+    for level in levels:
+        print(level.to_string())
+
+    return warrior
+
+def main(itemFileName: str, levelFileName: str):
     """Given the item filename, determine the levels to run in order to gain the resources to create the item.
     
     Args:
-        fileName (str): The file name of the item (JSON format)
+        itemFileName (str): The file name of the item (JSON format)
+        levelFileName (str): The file name of the levels (JSON format)
     """
-    print(f"\n\nInputs: {fileName}\n")
+    print(f"\n\nInputs: {itemFileName}\n")
 
-    warrior = load_file(fileName)
+    warrior = load_files(itemFileName, levelFileName)
 
     print(warrior.to_string())
 
@@ -38,6 +48,6 @@ def print_mock_warrior():
 
 if (__name__ == '__main__'):
     if (len(sys.argv) < 2):
-        main("warrior.json")
+        main("warrior.json", "levels.json")
     else:
-        main(sys.argv[1])
+        main(sys.argv[1], sys.argv[2])

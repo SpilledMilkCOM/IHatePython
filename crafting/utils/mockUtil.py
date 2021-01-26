@@ -1,6 +1,7 @@
 import json
 
 from models.Item import Item
+from models.Level import Level
 from models.Resource import Resource
 
 def create_warrior():
@@ -30,6 +31,12 @@ def create_warrior_from_json2(data):
     # Instanciate the top level using the 
 
     return Item(warriorData.name, resources)
+
+    
+def create_levels_from_json(data: str):
+    # Constructs an Level() to use the method/hook
+    return Level().deserialize(data)
+
 
 def create_warrior_from_json(data: str):
     # Constructs an Item() to use the method/hook

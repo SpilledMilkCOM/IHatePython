@@ -1,8 +1,12 @@
 class Resource(object):
 
-    def __init__(self, name, count):
+    def __init__(self, name: str, min: int, max: int = None):
         self.name = name
-        self.count = count
+        self.min = min
+        self.max = max
 
     def to_string(self):
-        return f"Resource: {self.name} x {self.count}"
+        if self.max is None:
+            return f"Resource: {self.name} x {self.min}"
+        else:
+            return f"Resource: {self.name} x ({self.min}-{self.max})"
