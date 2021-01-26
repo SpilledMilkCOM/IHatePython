@@ -1,17 +1,15 @@
 import json
 import sys
 
-from crafting.mockUtil import create_warrior, create_warrior_from_json2
+from utils.mockUtil import create_warrior, create_warrior_from_json2
 
-def main(a: int, b: int, c: int):
-    """Given A, B, and C - print the best actions to take to reduce the distance away from the midpoint
+def main(fileName: str):
+    """Given the item filename, determine the levels to run in order to gain the resources to create the item.
     
     Args:
-        a (int): Once of the starting values
-        b (int): Once of the starting values
-        c (int): Once of the starting values
+        fileName (str): The file name of the item (JSON format)
     """
-    print(f"\n\nInputs: {a}, {b}, {c}\n")
+    print(f"\n\nInputs: {fileName}\n")
 
     warrior = create_warrior()
 
@@ -30,6 +28,6 @@ def main(a: int, b: int, c: int):
 
 if (__name__ == '__main__'):
     if (len(sys.argv) < 2):
-        main(4, 5, 5)
+        main("warrior.json")
     else:
-        main(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]))
+        main(sys.argv[1])

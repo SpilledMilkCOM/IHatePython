@@ -1,7 +1,7 @@
 import json
 
-from crafting.item import Item
-from crafting.resource import Resource
+from models.Item import Item
+from models.Resource import Resource
 
 def create_warrior():
     resources = []
