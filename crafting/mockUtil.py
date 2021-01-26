@@ -33,7 +33,8 @@ def create_warrior_from_json(data):
 
 def dict_to_item(dict):
 
-    # This feels like a hack, because
+    # This feels like a hack, because the deserialization is based on known field names.
+    # And if a Resource also had the field "resources" in it, then this would fail.
 
     resources = dict.get('resources')
 

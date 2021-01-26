@@ -61,5 +61,5 @@ Figure out the optimal levels to traverse in order to craft an item.
 
 ## Reference
 
-https://www.geeksforgeeks.org/serialize-and-deserialize-complex-json-in-python/
-https://www.code-learner.com/python-json-example/
+* [JSON Serialization in Python](https://www.geeksforgeeks.org/serialize-and-deserialize-complex-json-in-python/)
+* [JSON Example](https://www.code-learner.com/python-json-example/)
