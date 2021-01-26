@@ -1,6 +1,6 @@
 import unittest
 
-from crafting.mockUtil import create_warrior
+from utils.mockUtil import create_warrior
 
 class TestStringMethods(unittest.TestCase):
 
