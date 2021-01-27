@@ -31,11 +31,35 @@ class Item(object):
                 return Resource(name, count)
         else:
             return Item(dict["name"], resources)
+    
+    def __repr__(self):
+        """ This is more for debugging and "evaluating" variables (versus converting them to a string)
+            A video suggested that returning how the object was constructed might be best (or accepted in the community)
+        """
+        first = True
+
+        result = f"{self.__class__.__name__}(\"{self.name}\",\n\t[\n"
+
+        for resource in self.resources:
+            result += "\t"
+
+            if not first:
+                result += ","
+            else:
+                result += " "
+                first = False
+
+            result += f" {repr(resource)}\n"
+
+        result += "\t]\n)"
+
+        return result
 
     def __str__(self):
         """ This is like the "ToString()" method in C#
+            (Keep the readable formatting, because you can always strip it out later.)
         """
-        result = f"Item: {self.name}\n"
+        result = f"{self.__class__.__name__}: {self.name}\n"
 
         for resource in self.resources:
             result += f"\t{resource}\n"

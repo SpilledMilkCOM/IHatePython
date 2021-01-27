@@ -1,6 +1,6 @@
-import json
 import sys
 
+from models.Resource import Resource
 from utils.craftUtil import craft_calc
 from utils.mockUtil import create_warrior, create_levels_from_json, create_warrior_from_json, create_warrior_from_json2
 
@@ -36,6 +36,10 @@ def main(itemFileName: str, levelFileName: str):
         print(level)
 
     craft_calc(warrior, levels)
+
+    print(repr(warrior))
+    for level in levels:
+        print(repr(level))
 
 if (__name__ == '__main__'):
     if (len(sys.argv) < 2):

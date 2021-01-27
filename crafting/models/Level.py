@@ -36,10 +36,34 @@ class Level:
         else:
             return Level(dict["name"], dict["energy"], resources)
 
+    def __repr__(self):
+        """ This is more for debugging and "evaluating" variables (versus converting them to a string)
+            A video suggested that returning how the object was constructed might be best (or accepted in the community)
+        """
+        first = True
+
+        result = f"{self.__class__.__name__}(\"{self.name}\",{self.cost},\n\t[\n"
+
+        for resource in self.resources:
+            result += "\t"
+
+            if not first:
+                result += ","
+            else:
+                result += " "
+                first = False
+
+            result += f" {repr(resource)}\n"
+
+        result += "\t]\n)"
+
+        return result
+
     def __str__(self):
         """ This is like the "ToString()" method in C#
+            (Keep the readable formatting, because you can always strip it out later.)
         """
-        result = f"Level: {self.name}\n\tCost: {self.cost}\n"
+        result = f"{self.__class__.__name__}: {self.name}\n\tCost: {self.cost}\n"
 
         for resource in self.resources:
             result += f"\t{resource}\n"
