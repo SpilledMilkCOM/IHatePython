@@ -36,10 +36,12 @@ class Level:
         else:
             return Level(dict["name"], dict["energy"], resources)
 
-    def to_string(self):
+    def __str__(self):
+        """ This is like the "ToString()" method in C#
+        """
         result = f"Level: {self.name}\n\tCost: {self.cost}\n"
 
         for resource in self.resources:
-            result += f"\t{resource.to_string()}\n"
+            result += f"\t{resource}\n"
 
         return result

@@ -32,10 +32,12 @@ class Item(object):
         else:
             return Item(dict["name"], resources)
 
-    def to_string(self):
+    def __str__(self):
+        """ This is like the "ToString()" method in C#
+        """
         result = f"Item: {self.name}\n"
 
         for resource in self.resources:
-            result += f"\t{resource.to_string()}\n"
+            result += f"\t{resource}\n"
 
         return result

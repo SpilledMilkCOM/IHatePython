@@ -5,7 +5,9 @@ class Resource(object):
         self.min = min
         self.max = max
 
-    def to_string(self):
+    def __str__(self):
+        """ This is like the "ToString()" method in C#
+        """
         if self.max is None:
             return f"Resource: {self.name} x {self.min}"
         else:
