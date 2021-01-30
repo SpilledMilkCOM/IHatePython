@@ -1,9 +1,12 @@
 # 💢 I Hate Python 💢
 
-* :file_folder: **Models** - Some python classes
-* :file_folder: **corepy** - A Pluralsight course notes and code
-* :file_folder: **demo_reader** - A Pluralsight course notes and code
-* :file_folder: **functions** - A Pluralsight course notes and code
+* 📁 **Models** - Some python classes
+* 📁 **PrintXY** - A base puzzle posted by [Tim Sweeny](https://twitter.com/TimSweeneyEpic) on Twitter
+* 📁 **corepy** - A Pluralsight course notes and code
+* 📁 **crafting** - Solving a crafting problem
+* 📁 **demo_reader** - A Pluralsight course notes and code
+* 📁 **functions** - A Pluralsight course notes and code
+* 📁 **puzzle** - Solved a puzzle
 
 ## 📜 Backstory
 
