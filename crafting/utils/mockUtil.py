@@ -41,3 +41,19 @@ def create_levels_from_json(data: str):
 def create_warrior_from_json(data: str):
     # Constructs an Item() to use the method/hook
     return Item().deserialize(data)
+
+def print_mock_warrior():
+    warrior = create_warrior()
+
+    print(warrior.to_string())
+
+    print(json.dumps(warrior, default=lambda childObj: childObj.__dict__, indent=4))
+
+    # Alphabetical fields
+    # print(json.dumps(warrior, default=lambda childObj: childObj.__dict__, indent=4, sort_keys=True))
+
+    data = json.dumps(warrior, default=lambda childObj: childObj.__dict__)
+
+    warrior = create_warrior_from_json2(data)
+
+    print(warrior.to_string())

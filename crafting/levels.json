@@ -10,8 +10,8 @@
             },
             {
                 "name": "Water",
-                "min": 10,
-                "max": 12
+                "min": 12,
+                "max": 15
             }
         ]
     },
@@ -28,6 +28,27 @@
                 "name": "Water",
                 "min": 10,
                 "max": 12
+            }
+        ]
+    },
+    {
+        "name": "Three",
+        "energy": 15,
+        "resources": [
+            {
+                "name": "Metal",
+                "min": 3,
+                "max": 5
+            },
+            {
+                "name": "Bone",
+                "min": 5,
+                "max": 7
+            },
+            {
+                "name": "Water",
+                "min": 8,
+                "max": 10
             }
         ]
     }

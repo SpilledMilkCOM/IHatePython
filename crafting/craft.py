@@ -26,7 +26,7 @@ def main(itemFileName: str, levelFileName: str):
         itemFileName (str): The file name of the item (JSON format)
         levelFileName (str): The file name of the levels (JSON format)
     """
-    print(f"\n\nInputs: {itemFileName}\n")
+    print(f"\n\nInputs: '{itemFileName}', '{levelFileName}'\n")
 
     load_files(itemFileName, levelFileName)
 
@@ -37,9 +37,9 @@ def main(itemFileName: str, levelFileName: str):
 
     craft_calc(warrior, levels)
 
-    print(repr(warrior))
-    for level in levels:
-        print(repr(level))
+    # print(repr(warrior))
+    # for level in levels:
+    #     print(repr(level))
 
 if (__name__ == '__main__'):
     if (len(sys.argv) < 2):
