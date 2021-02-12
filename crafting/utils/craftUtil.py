@@ -43,6 +43,10 @@ def craft_calc(item, levels):
     for level in best.values():
         print(f"{level[0]} in level {level[1]} @ {level[2]:.2f} / unit (cost)")
 
+    # Will need to build a game tree of all of the possible runs to find out the best set of level runs
+
+    # Will also need to figure out the resources that the build other resources
+
     print("\n\n")
 
     return None
