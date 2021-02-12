@@ -25,6 +25,24 @@ def craft_calc(item, levels):
             for resource in level.resources:
                 print(f"Level={level.name} -- {resource.name} {((resource.min + resource.max) / 2) / level.cost}")
 
+    print("\nBEST:\n")
+
+    # Add tuples of 3 into a "best" dictionary (resource name, level name, amount per unit cost)
+
+    best = {}
+
+    for neededResource in item.resources:
+        for level in levels:
+            for levelResource in level.resources:
+                if (neededResource.name == levelResource.name):
+                    if (neededResource.name not in best):
+                        best[neededResource.name] = (neededResource.name, level.name, ((levelResource.min + levelResource.max) / 2) / level.cost)
+                    elif (best[neededResource.name][2] < ((levelResource.min + levelResource.max) / 2) / level.cost):
+                        best[neededResource.name] = (neededResource.name, level.name, ((levelResource.min + levelResource.max) / 2) / level.cost)
+
+    for level in best.values():
+        print(f"{level[0]} in level {level[1]} @ {level[2]:.2f} / unit (cost)")
+
     print("\n\n")
 
     return None
