@@ -46,7 +46,7 @@ def craft_calc(item, levels):
 
     # Will need to build a game tree of all of the possible runs to find out the best set of level runs
 
-    # Will also need to figure out the resources that the build other resources
+    # Will also need to figure out the resources that build other resources
 
     print("\n\n")
 
