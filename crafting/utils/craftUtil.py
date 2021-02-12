@@ -28,6 +28,7 @@ def craft_calc(item, levels):
     print("\nBEST:\n")
 
     # Add tuples of 3 into a "best" dictionary (resource name, level name, amount per unit cost)
+    # Create a tuple, versus creating a specialized object to contain those three pieces of info.
 
     best = {}
 
