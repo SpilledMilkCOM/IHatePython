@@ -28,8 +28,7 @@ def craft_calc(item, levels):
 
     print("")
 
-    # Add tuples of 3 into a "best" dictionary (resource name, level name, amount per unit cost)
-    # Create a tuple, versus creating a specialized object to contain those three pieces of info.
+    # Add BestLevel to a dictionary (resource name, level name, amount per unit cost)
 
     best = {}
 
@@ -38,9 +37,9 @@ def craft_calc(item, levels):
             for levelResource in level.resources:
                 if (neededResource.name == levelResource.name):
                     if (neededResource.name not in best):
-                        best[neededResource.name] = BestLevel(neededResource.name, level.name, ((levelResource.min + levelResource.max) / 2) / level.cost, (levelResource.min + levelResource.max) / 2)
+                        best[neededResource.name] = BestLevel(level.name, neededResource.name, ((levelResource.min + levelResource.max) / 2) / level.cost, (levelResource.min + levelResource.max) / 2)
                     elif (best[neededResource.name].unit < ((levelResource.min + levelResource.max) / 2) / level.cost):
-                        best[neededResource.name] = BestLevel(neededResource.name, level.name, ((levelResource.min + levelResource.max) / 2) / level.cost, (levelResource.min + levelResource.max) / 2)
+                        best[neededResource.name] = BestLevel(level.name, neededResource.name, ((levelResource.min + levelResource.max) / 2) / level.cost, (levelResource.min + levelResource.max) / 2)
 
     for level in best.values():
         print(f"{level}")

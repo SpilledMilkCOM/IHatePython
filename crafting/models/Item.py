@@ -8,6 +8,29 @@ class Item(object):
         self.name = name
         self.resources = resources
 
+    def __add__(self, item):
+        clone = self.clone()
+
+        for resource in clone.resources:
+            for itemResource in item.resources:
+                if (resource.name == itemResource.name):
+                    if (resource.max is not None and itemResource.max is not None):
+                        resource.max += itemResource.max
+                    resource.min += itemResource.min
+                    break
+ 
+        return clone
+
+    def clone(self):
+        clone = Item(self.name)
+
+        clone.resources = []
+
+        for resource in self.resources:
+            clone.resources.append(resource.clone())
+
+        return clone
+
     def deserialize(self, data: str):
 
         # !! There has GOT to be a more generic way to deserialize objects !!

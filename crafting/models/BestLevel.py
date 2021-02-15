@@ -16,4 +16,4 @@ class BestLevel(object):
         """ This is like the "ToString()" method in C#
             (Keep the readable formatting, because you can always strip it out later.)
         """
-        return f"{self.__class__.__name__}: {self.level:<6} in {self.resource:<6} @ {self.unit:.3f} / unit"
+        return f"{self.__class__.__name__}: {self.resource:<6} in {self.level:<6} @ {self.unit:.3f} / unit"
