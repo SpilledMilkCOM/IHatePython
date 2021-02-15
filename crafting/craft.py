@@ -32,8 +32,8 @@ def main(itemFileName: str, levelFileName: str):
 
     print(warrior)
     
-    for level in levels:
-        print(level)
+    # for level in levels:
+    #     print(level)
 
     craft_calc(warrior, levels)
 

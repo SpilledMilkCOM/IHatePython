@@ -16,6 +16,6 @@ class Resource(object):
             (Keep the readable formatting, because you can always strip it out later.)
         """
         if self.max is None:
-            return f"{self.__class__.__name__}: {self.name} x {self.min}"
+            return f"{self.__class__.__name__}: {self.name:<6} x {self.min:>4}"
         else:
-            return f"{self.__class__.__name__}: {self.name} x ({self.min}-{self.max})"
+            return f"{self.__class__.__name__}: {self.name:<6} x ({self.min:>4}-{self.max:>4})"
