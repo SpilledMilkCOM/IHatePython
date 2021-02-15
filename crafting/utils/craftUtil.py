@@ -1,11 +1,12 @@
 import math
 
+from models.BestLevel import BestLevel
 from models.Item import Item
 from models.Level import Level
 from models.Resource import Resource
 
 def craft_calc(item, levels):
-    print("\nCalculating...\n")
+    # print("\nCalculating...\n")
 
     # Which levels have the resources needed?
 
@@ -25,33 +26,26 @@ def craft_calc(item, levels):
             for resource in level.resources:
                 print(f"{level.name:<6} - {resource.name:<6} {((resource.min + resource.max) / 2) / level.cost:.3f}")
 
-    print("\nBEST:\n")
+    print("")
 
     # Add tuples of 3 into a "best" dictionary (resource name, level name, amount per unit cost)
     # Create a tuple, versus creating a specialized object to contain those three pieces of info.
 
     best = {}
 
-    # ARE constants truly constants?
-
-    RESOURCE_IDX = 0
-    LEVEL_IDX = 1
-    UNIT_IDX = 2
-    AVERAGE_IDX = 3
-
     for neededResource in item.resources:
         for level in levels:
             for levelResource in level.resources:
                 if (neededResource.name == levelResource.name):
                     if (neededResource.name not in best):
-                        best[neededResource.name] = (neededResource.name, level.name, ((levelResource.min + levelResource.max) / 2) / level.cost, (levelResource.min + levelResource.max) / 2)
-                    elif (best[neededResource.name][2] < ((levelResource.min + levelResource.max) / 2) / level.cost):
-                        best[neededResource.name] = (neededResource.name, level.name, ((levelResource.min + levelResource.max) / 2) / level.cost, (levelResource.min + levelResource.max) / 2)
+                        best[neededResource.name] = BestLevel(neededResource.name, level.name, ((levelResource.min + levelResource.max) / 2) / level.cost, (levelResource.min + levelResource.max) / 2)
+                    elif (best[neededResource.name].unit < ((levelResource.min + levelResource.max) / 2) / level.cost):
+                        best[neededResource.name] = BestLevel(neededResource.name, level.name, ((levelResource.min + levelResource.max) / 2) / level.cost, (levelResource.min + levelResource.max) / 2)
 
     for level in best.values():
-        print(f"{level[RESOURCE_IDX]:<6} in level {level[LEVEL_IDX]:<6} @ {level[UNIT_IDX]:.2f} / unit (cost)")
+        print(f"{level}")
 
-    print("\n\n")
+    print("")
 
     # Will need to build a game tree of all of the possible runs to find out the best set of level runs
 
@@ -60,7 +54,7 @@ def craft_calc(item, levels):
 
     for neededResource in item.resources:
         level = best[neededResource.name]
-        print(f"{neededResource.min:<4} {neededResource.name:<6} run level {level[LEVEL_IDX]:<6} {math.ceil(neededResource.min / level[AVERAGE_IDX]):>3} times")
+        print(f"{neededResource.min:<4} {neededResource.name:<6} run level {level.level:<6} {math.ceil(neededResource.min / level.average):>3} times")
 
     print("\n\n")
 
