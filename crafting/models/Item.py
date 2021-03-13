@@ -9,6 +9,8 @@ class Item(object):
         self.resources = resources
 
     def __add__(self, item):
+        """ Overload of the "+" operator.
+        """
         clone = self.clone()
 
         for resource in clone.resources:
@@ -22,6 +24,8 @@ class Item(object):
         return clone
 
     def clone(self):
+        """ A deep clone of self.
+        """
         clone = Item(self.name)
 
         clone.resources = []

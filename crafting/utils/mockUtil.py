@@ -33,10 +33,13 @@ def create_warrior_from_json2(data):
     return Item(warriorData.name, resources)
 
     
-def create_levels_from_json(data: str):
-    # Constructs an Level() to use the method/hook
-    return Level().deserialize(data)
+def create_items_from_json(data: str):
+    # Constructs a Item() to use the method/hook
+    return Item().deserialize(data)
 
+def create_levels_from_json(data: str):
+    # Constructs a Level() to use the method/hook
+    return Level().deserialize(data)
 
 def create_warrior_from_json(data: str):
     # Constructs an Item() to use the method/hook

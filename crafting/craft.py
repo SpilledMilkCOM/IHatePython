@@ -2,38 +2,45 @@ import sys
 
 from models.Resource import Resource
 from utils.craftUtil import craft_calc
-from utils.mockUtil import create_warrior, create_levels_from_json, create_warrior_from_json, create_warrior_from_json2
+from utils.mockUtil import create_items_from_json, create_levels_from_json, create_warrior_from_json
 
 warrior = None
 levels = None
+itemResources = None
 usedResources = None
 
-def load_files(itemFileName: str, levelFileName: str, usedResourcesFileName: str):
+def load_files(itemFileName: str, levelFileName: str, itemResourcesFileName: str, usedResourcesFileName: str):
 
-    global warrior, levels, usedResources
+    global warrior, levels, itemResources, usedResources
 
     file = open(itemFileName, "r")
     warrior = create_warrior_from_json(file.read())
 
     file =  open(levelFileName, "r")
     levels = create_levels_from_json(file.read())
+
+    if (itemResourcesFileName != None):
+        file =  open(itemResourcesFileName, "r")
+        itemResources = create_items_from_json(file.read())
     
     if (usedResourcesFileName != None):
         file =  open(usedResourcesFileName, "r")
         usedResources = create_warrior_from_json(file.read())
 
-def main(itemFileName: str, levelFileName: str, usedResourcesFileName: str):
+def main(itemFileName: str, levelFileName: str, itemResourcesFileName: str, usedResourcesFileName: str):
     """Given the item filename, determine the levels to run in order to gain the resources to create the item.
     
     Args:
         itemFileName (str): The file name of the item (JSON format)
         levelFileName (str): The file name of the levels (JSON format)
+        itemResourcesFileName (str): The file name of the items that can be created from other items (JSON format)
+        usedResourcesFileName (str): The file name of the items that have already been retrieved (JSON format)
     """
     global warrior
 
     print(f"\n\nInputs: '{itemFileName}', '{levelFileName}', '{usedResourcesFileName}'\n")
 
-    load_files(itemFileName, levelFileName, usedResourcesFileName)
+    load_files(itemFileName, levelFileName, itemResourcesFileName, usedResourcesFileName)
 
     print(warrior)
     print(usedResources)
@@ -42,8 +49,8 @@ def main(itemFileName: str, levelFileName: str, usedResourcesFileName: str):
 
     print(warrior)
     
-    # for level in levels:
-    #     print(level)
+    for item in itemResources:
+        print(item)
 
     craft_calc(warrior, levels)
 
@@ -53,6 +60,6 @@ def main(itemFileName: str, levelFileName: str, usedResourcesFileName: str):
 
 if (__name__ == '__main__'):
     if (len(sys.argv) < 2):
-        main("warrior.json", "levels.json", None)
+        main("warrior.json", "levels.json", None, None)
     else:
-        main(sys.argv[1], sys.argv[2], sys.argv[3])
+        main(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
