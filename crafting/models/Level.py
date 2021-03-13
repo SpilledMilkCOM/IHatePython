@@ -1,6 +1,6 @@
 import json
 
-from models.Resource import Resource
+from .Resource import Resource
 
 class Level:
 
