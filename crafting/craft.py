@@ -1,6 +1,5 @@
 import sys
 
-from models.Resource import Resource
 from utils.craftUtil import craft_calc
 from utils.mockUtil import create_items_from_json, create_levels_from_json, create_warrior_from_json
 
@@ -38,7 +37,7 @@ def main(itemFileName: str, levelFileName: str, itemResourcesFileName: str, used
     """
     global warrior
 
-    print(f"\n\nInputs: '{itemFileName}', '{levelFileName}', '{usedResourcesFileName}'\n")
+    print(f"\n\nInputs: '{itemFileName}', '{levelFileName}', '{itemResourcesFileName}', '{usedResourcesFileName}'\n")
 
     load_files(itemFileName, levelFileName, itemResourcesFileName, usedResourcesFileName)
 

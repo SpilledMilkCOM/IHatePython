@@ -1,5 +1,7 @@
 {
+    "python.analysis.extraPaths": [".\\models", ".\\utils"],
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,
+    "python.languageServer": "Pylance",
     "python.pythonPath": "C:\\Users\\Parker\\AppData\\Local\\Programs\\Python\\Python39\\python.exe"
 }

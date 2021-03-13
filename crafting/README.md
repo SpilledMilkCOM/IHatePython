@@ -69,3 +69,4 @@ Figure out the optimal levels to traverse in order to craft an item.
 * [JSON Example](https://www.code-learner.com/python-json-example/)
 * [Naming Conventions](https://namingconvention.org/python/)
 * [pylint - false import errors](https://stackoverflow.com/questions/63373911/how-do-you-make-pylint-in-vscode-know-that-its-in-a-package-so-that-relative-i) ❌ didn't work
+* [pyright documentation](https://github.com/microsoft/pyright/blob/master/docs/configuration.md)
