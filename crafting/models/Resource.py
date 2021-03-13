@@ -5,6 +5,12 @@ class Resource(object):
         self.min = min
         self.max = max
 
+    def average(self):
+        if (self.max is None):
+            return self.min
+
+        return (self.min + self.max) / 2
+
     def clone(self):
         return Resource(self.name, self.min, self.max)
 

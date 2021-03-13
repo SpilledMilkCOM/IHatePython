@@ -23,6 +23,12 @@ class Item(object):
  
         return clone
 
+    def add_to_resource(self, name: str, amount: int):
+        for resource in self.resources:
+            if (resource.name == name):
+                resource.min += amount
+                resource.max = None
+
     def clone(self):
         """ A deep clone of self.
         """

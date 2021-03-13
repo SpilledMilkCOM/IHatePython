@@ -51,7 +51,7 @@ def main(itemFileName: str, levelFileName: str, itemResourcesFileName: str, used
     for item in itemResources:
         print(item)
 
-    craft_calc(warrior, levels)
+    craft_calc(warrior, levels, itemResources)
 
     # print(repr(warrior))
     # for level in levels:

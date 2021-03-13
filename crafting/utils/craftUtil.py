@@ -2,24 +2,11 @@ import math
 
 from models.BestLevel import BestLevel
 from models.Item import Item
-from models.Level import Level
-from models.Resource import Resource
 
-def craft_calc(item, levels):
-    print("\nCalculating...\n")
+def craft_calc(item: Item, levels, items):
+    print("\nCalculating...\n\n")
 
     # Which levels have the resources needed?
-
-    # print("\nEfficiences:\n")
-
-    # # Find the level that produces the most efficient result of a resource.
-
-    # for level in levels:
-    #         for resource in level.resources:
-    #             print(f"{level.name:<6} - {resource.name:<6} {((resource.min + resource.max) / 2) / level.cost:.3f}")
-
-    print("")
-
     # Add BestLevel to a dictionary (resource name, level name, amount per unit cost)
 
     best = {}
@@ -47,6 +34,39 @@ def craft_calc(item, levels):
         level = best[neededResource.name]
         print(f"{neededResource.min:>4} {neededResource.name:<6} run level {level.level:<6} {math.ceil(neededResource.min / level.average):>3} times")
 
+    print("")
+
+    # Run levels that have resources that cannot be constructed
+
+    itemsDict = {}
+
+    for resource in items:
+        itemsDict[resource.name] = resource
+
+    for neededResource in item.resources:
+        resource = itemsDict.get(neededResource.name)
+
+        if (resource is None):
+            level = best[neededResource.name]
+            run_level(find_level(level.level, levels), item, math.ceil(neededResource.min / level.average))
+
+    print(item)
+
+    # Anything that's a surplus (a negative amount),  convert it to a resource that needs it.
+
     print("\n\n")
 
     return None
+
+def find_level(name: str, levels):
+    for level in levels:
+        if (level.name == name):
+            return level
+    return None
+
+def run_level(level, item, count: int):
+
+    print(f"Running Level '{level.name}' {count} times...")
+
+    for resource in level.resources:
+        item.add_to_resource(resource.name, count * -resource.average())
