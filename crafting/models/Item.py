@@ -26,8 +26,11 @@ class Item(object):
     def add_to_resource(self, name: str, amount: int):
         for resource in self.resources:
             if (resource.name == name):
-                resource.min += amount
-                resource.max = None
+                if (resource.max is None):
+                    resource.min += amount
+                else:
+                    resource.min = (resource.min + resource.max) / 2 + amount
+                    resource.max = None
 
     def clone(self):
         """ A deep clone of self.
@@ -87,6 +90,17 @@ class Item(object):
         result += "\t]\n)"
 
         return result
+
+    def resource(self, name: str):
+        """ Lookup a needed resource by name.
+
+          Args:
+            name (str): The name of the resource to find.
+        """
+        for resource in self.resources:
+            if (resource.name == name):
+                return resource
+        return None
 
     def __str__(self):
         """ This is like the "ToString()" method in C#

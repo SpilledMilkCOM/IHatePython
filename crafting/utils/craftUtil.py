@@ -3,6 +3,14 @@ import math
 from models.BestLevel import BestLevel
 from models.Item import Item
 
+def convert_resource(itemWithNeededResource: Item, surplusResource, item):
+    value = surplusResource.average() / itemWithNeededResource.resource(surplusResource.name).average()
+
+    item.add_to_resource(itemWithNeededResource.name, value)
+    surplusResource.min = 0
+    surplusResource.max = None
+
+
 def craft_calc(item: Item, levels, items):
     print("\nCalculating...\n\n")
 
@@ -50,22 +58,55 @@ def craft_calc(item: Item, levels, items):
             level = best[neededResource.name]
             run_level(find_level(level.level, levels), item, math.ceil(neededResource.min / level.average))
 
+    print("")
+
     print(item)
 
-    # Anything that's a surplus (a negative amount),  convert it to a resource that needs it.
+    # Anything that's a surplus (a negative amount),  convert it to a resource that uses it.
 
-    print("\n\n")
+    for resource in item.resources:
+        if (resource.min < 0):
+            itemWithNeededResource = find_item_with_needed_resource(resource.name, items)
+
+            if (itemWithNeededResource is not None):
+                convert_resource(itemWithNeededResource, resource, item)
+
+    print(item)
+
+    print("\n")
 
     return None
 
+
+def find_item_with_needed_resource(name: str, items):
+    """ Find the item from the list with a resource that is needed.
+
+          Args:
+            name (str): The name of the resource to find.
+    """
+    for item in items:
+        for resource in item.resources:
+            if (resource.name == name):
+                return item
+
+    return None
+
+
 def find_level(name: str, levels):
+    """ Find a level from the list by name.
+
+          Args:
+            name (str): The name of the resource to find.
+            levels (): The array of levels to search.
+    """
     for level in levels:
         if (level.name == name):
             return level
+
     return None
 
-def run_level(level, item, count: int):
 
+def run_level(level, item, count: int):
     print(f"Running Level '{level.name}' {count} times...")
 
     for resource in level.resources:

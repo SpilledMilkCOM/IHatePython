@@ -48,8 +48,8 @@ def main(itemFileName: str, levelFileName: str, itemResourcesFileName: str, used
 
     print(warrior)
     
-    for item in itemResources:
-        print(item)
+    # for item in itemResources:
+    #     print(item)
 
     craft_calc(warrior, levels, itemResources)
 
