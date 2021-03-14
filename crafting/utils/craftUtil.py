@@ -2,8 +2,16 @@ import math
 
 from models.BestLevel import BestLevel
 from models.Item import Item
+from models.Level import Level
 
-def convert_resource(itemWithNeededResource: Item, surplusResource, item):
+def convert_resource(itemWithNeededResource: Item, surplusResource, item: Item):
+    """ Convert a surplus resource into a needed resource.
+
+        Args:
+            itemWithNeededResource (Item): 
+            surplusResource ():
+            item ():
+    """
     value = surplusResource.average() / itemWithNeededResource.resource(surplusResource.name).average()
 
     item.add_to_resource(itemWithNeededResource.name, value)
@@ -12,6 +20,12 @@ def convert_resource(itemWithNeededResource: Item, surplusResource, item):
 
 
 def craft_calc(item: Item, levels, items):
+    """ The main crafting algorithm
+
+        Args:
+            item (Item): The item to craft with the resources needed.
+            levels ()
+    """
     print("\nCalculating...\n\n")
 
     # Which levels have the resources needed?
@@ -62,6 +76,8 @@ def craft_calc(item: Item, levels, items):
 
     print(item)
 
+    print("Redistributing surplus resources...\n")
+
     # Anything that's a surplus (a negative amount),  convert it to a resource that uses it.
 
     for resource in item.resources:
@@ -81,8 +97,11 @@ def craft_calc(item: Item, levels, items):
 def find_item_with_needed_resource(name: str, items):
     """ Find the item from the list with a resource that is needed.
 
-          Args:
+        Args:
             name (str): The name of the resource to find.
+
+        Returns:
+            (Item):
     """
     for item in items:
         for resource in item.resources:
@@ -95,9 +114,12 @@ def find_item_with_needed_resource(name: str, items):
 def find_level(name: str, levels):
     """ Find a level from the list by name.
 
-          Args:
+        Args:
             name (str): The name of the resource to find.
             levels (): The array of levels to search.
+
+        Returns:
+            (Level): Why WOULDN'T you want to know this from the function definition?  NOT ALLOWED IN PYTHON!!
     """
     for level in levels:
         if (level.name == name):
@@ -107,6 +129,14 @@ def find_level(name: str, levels):
 
 
 def run_level(level, item, count: int):
+    """ Run a level many times and update an item's resources.
+
+        Args:
+            level ():
+            item ():
+            count (int):
+    """
+
     print(f"Running Level '{level.name}' {count} times...")
 
     for resource in level.resources:
