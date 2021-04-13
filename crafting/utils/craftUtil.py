@@ -66,11 +66,13 @@ def craft_calc(item: Item, levels, items):
         itemsDict[resource.name] = resource
 
     for neededResource in item.resources:
-        resource = itemsDict.get(neededResource.name)
 
-        if (resource is None):
-            level = best[neededResource.name]
-            run_level(find_level(level.level, levels), item, math.ceil(neededResource.min / level.average))
+        if (neededResource.average() > 0):
+            resource = itemsDict.get(neededResource.name)
+
+            if (resource is None):
+                level = best[neededResource.name]
+                run_level(find_level(level.level, levels), item, math.ceil(neededResource.min / level.average))
 
     print("")
 
@@ -88,6 +90,14 @@ def craft_calc(item: Item, levels, items):
                 convert_resource(itemWithNeededResource, resource, item)
 
     print(item)
+
+    for neededResource in item.resources:
+        level = best[neededResource.name]
+        print(f"{round(neededResource.min):>4} {neededResource.name:<6} run level {level.level:<6} {math.ceil(neededResource.min / level.average):>3} times")
+
+    print("")
+
+    # TODO: Keep a list of "runs" then print them out at the end.
 
     print("\n")
 
